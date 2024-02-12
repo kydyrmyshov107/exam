@@ -25,20 +25,23 @@ const Input = () => {
   };
 
   const handleAdd = async () => {
-    const newData = {
-      img: valueImg,
-      text: valueText,
-      date: valueDate,
-    };
-
-    try {
-      const response = await axios.post(url, newData);
-      setData([...data, response.data]);
-      setValueImg("");
-      setValueText("");
-      setValueDate("");
-    } catch (error) {
-      console.error(error);
+    if (valueDate === "" || valueImg === "" || valueText === "") {
+      alert("write something");
+    } else {
+      const newData = {
+        img: valueImg,
+        text: valueText,
+        date: valueDate,
+      };
+      try {
+        const response = await axios.post(url, newData);
+        setData([...data, response.data]);
+        setValueImg("");
+        setValueText("");
+        setValueDate("");
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 

@@ -1,0 +1,15 @@
+.items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  .aside {
+    border: 1px solid white;
+    .putClicked {
+      background-color: green;
+    }
+
+    img {
+      width: 250px;
+    }
+  }
+}
